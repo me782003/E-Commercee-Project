@@ -1,0 +1,29 @@
+ {
+                    loading === false?(
+                        products && products.length >=1 ?(
+                            products.map((prod, index)=> <AdminAllProductsCard key={index} item = {prod}/> )
+                        ):<h6 className='text-center my-5 fs-2' style={{ color:'#9b9898'}}>لم تقم بإضافة منتجات أي حتى الآن!</h6>
+
+                    ):(
+                        <div className='d-flex justify-content-center align-items-center mt-5'>
+                            <Spinner className='spin' style={{width:'100px', height:'100px', borderWidth:'10px' , opacity:'.3'}} animation="border" variant="secondary" role="status" />
+                        </div>
+                    )
+                    
+                }
+
+
+
+
+                ----------------------------------------
+
+{
+                        isPress?(
+                            loading?(
+                                <Spinner style={{
+                                    width:'20px',
+                                    height:'20px',
+                                }} animation="border" variant="light" role="status" />
+                                ):null
+                        ):"حذف"
+                    }
