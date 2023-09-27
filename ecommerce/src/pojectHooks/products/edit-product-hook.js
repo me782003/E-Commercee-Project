@@ -190,6 +190,11 @@ const AdminEditProductHook = (id) => {
            
             return ;
         }
+        
+        if(qty < 0){
+            notify( 'لا يمكن أن تكون كمية المنتج أصغر من 0  ' , 'warning');
+            return;
+        }
             
 
         console.log('////////////////////')

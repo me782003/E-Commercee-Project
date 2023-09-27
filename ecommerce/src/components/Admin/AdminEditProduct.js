@@ -99,6 +99,7 @@ const AdminEditProduct = () => {
                         value={qty}
                         onChange={onChangeQuantity}
                         type="number"
+                        min='0'
                         className="text-inputs d-block mt-3 px-3"
                         placeholder=" الكمية المتاحة"
                     />

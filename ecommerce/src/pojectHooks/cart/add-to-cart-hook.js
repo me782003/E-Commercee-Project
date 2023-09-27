@@ -24,12 +24,17 @@ const AddToCartHook = (prodID, item) => {
     //add product to cart
     const addToCartHandle = async()=>{
 
+
+        if(item.quantity <= 0){
+            notify('المنتج منتهي من المخزون حالياً', 'error');
+            return;
+        }
+        
         if(item.availableColors.length >= 1){
             if(colorText === ''){
                 notify('إختر لوناً للمنتج من الألوان المتاحة أولاً','warning');
                 return;
             }
-            
         }
 
         setLoading(true)

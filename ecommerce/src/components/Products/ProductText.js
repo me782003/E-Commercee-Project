@@ -36,10 +36,7 @@ const ProductText = () => {
 };
   
     return (
-    
     //-------------------------------------------------
-    
-
     <Row style={{backgroundColor:'#2D2E32', direction:'ltr'}} className=' m-0 p-3 h-100'>
       {
         loading === false?(
@@ -136,8 +133,12 @@ const ProductText = () => {
     
                     
                       item?.availableColors?.length >=1 ? (
-                        colorText === '' ? (<i className="fas fa-caret-down"></i>):(
-                        <div className="color mx-2" style={{ backgroundColor: colorText }}></div>
+                        colorText === '' ? (
+                          <div className='d-flex justify-content-center align-items-center color border mx-2'>
+                            <i className="fas fa-caret-down "></i>
+                          </div>
+                        ):(
+                        <div className="color mx-2 border border-light" style={{ backgroundColor: colorText }}></div>
                         )
                       ):('غير محدد')
                       
@@ -150,7 +151,7 @@ const ProductText = () => {
                               <div
                                 key ={index}
                                 onClick={()=>colorClick(index, color)}
-                                className="color mx-2 "
+                                className="color mx-2 border border-dark border-2 "
                                 style={{ backgroundColor: color , border: indexColor === index? '2px solid #3d3c3c':'none', transform:indexColor === index?'scale(1.3,1.3)': 'scale(1,1)' }}
                                 >
                               </div>
